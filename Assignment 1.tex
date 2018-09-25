@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+	\paragraph{Exercise 3.}
+	\subparagraph{a.)}
+		$\mathcal{F}=\{\Omega, \varnothing, A_1, A_2, A_3, A_1^c, A_2^c, A_3^c\}$.\\
+	
+		\noindent$\Omega\in\mathcal{F}$, so $\mathcal{F}$ satisfies condition i).\\
+		
+		\noindent It is clear that $\mathcal{F}$ is closed under complement, so $\mathcal{F}$ satisfies condition ii).\\
+		
+		\noindent Let i, j, k be distinct elements of $\{1, 2, 3\}$. Then since $\mathcal{A}$ is a partition of $\Omega$,
+		
+		\noindent$A_i\cup A_j=A_k^c$
+		
+		\noindent$A_i\cup A_j^c=A_j^c$
+		
+		\noindent$A_i^c\cup A_j^c=A_j\cup A_k\cup A_i\cup A_k=\Omega$\\
+		
+		\noindent It is also clear that,
+		
+		\noindent$A_i\cup A_i^c=\Omega$
+		
+		\noindent$\Omega\cup x=\Omega$ for all $x\in \mathcal{F}$
+		
+		\noindent$\varnothing\cup x=x$ for all $x\in \mathcal{F}$\\
+		
+		These cover all cases, so $\mathcal{F}$ is closed under pairwise union. Since $\mathcal{F}$ is finite, it then satisfies condition iii) and therefore is a $\sigma$-algebra. It is easily verified that the removal of any element of $\mathcal{F}$ will cause it to break one of the conditions, so $\mathcal{F}$ must be the minimal $\sigma$-algebra.
+	
+	\subparagraph{b.)}
+		$\mathbb{P}(A_1)=0.6$, $\mathbb{P}(A_2)=0.3$, $\mathbb{P}(A_3)=0.1$ as given.
+		
+		$\mathbb{P}(A_1^c)=0.4$, $\mathbb{P}(A_2^c)=0.7$, $\mathbb{P}(A_3^c)=0.9$ by properties of probability measure.
+		
+		$\mathbb{P}(\Omega)=1$, $\mathbb{P}(\varnothing)=0$ by properties of probability measure.
+
+	\paragraph{Exercise 6.}
+	Base Case: Let n = 2.
+	\begin{align*}
+		P(A_1\cup A_2)&=P(A_1)+P(A_2)-P(A_1\cap A_2)\\
+		&=\sum_{k=1}^{2}(-1)^{k-1}S_{k,n}
+	\end{align*}
+	
+	Inductive Hypothesis: Suppose
+	\begin{equation*}
+		P(\bigcup_{i=1}^{n}A_i)=\sum_{k=1}^{n}(-1)^{k-1}S_{k, n}
+	\end{equation*}
+	
+	Then,
+	\begin{align*}
+		P(\bigcup_{i=1}^{n+1}A_i)=&P(\bigcup_{i=1}^{n}A_i\cup A_{n+1}) \\
+		=&P(\bigcup_{i=1}^{n}A_i)+P(A_{n+1})-P(\bigcup_{i=1}^{n}A_i\cap A_{n+1}) \\
+		=&\sum_{k=1}^{n}(-1)^{k-1}\sum_{1\leq i_1<...<i_k\leq n}P(A_{i_1}\cap ...\cap A_{i_k}) \\
+		&-\sum_{k=1}^{n}(-1)^{k-1}\sum_{1\leq i_1<...<i_k\leq n}P(A_{i_1}\cap ...\cap A_{i_k}\cap A_{n+1})+P(A_{n+1})\\
+		=&\sum_{k=1}^{n}(-1)^{k-1}\Big(\sum_{1\leq i_1<...<i_k\leq n}P(A_{i_1}\cap ...\cap A_{i_k})-\sum_{1\leq i_1<...<i_k\leq n}P(A_{i_1}\cap ...\cap A_{i_k}\cap A_{n+1})\Big) \\
+		&+P(A_{n+1}) \\
+		=&\sum_{k=1}^{n}(-1)^{k-1}\Big(\sum_{1\leq i_1<...<i_k<n+1}P(A_{i_1}\cap ...\cap A_{i_k})-\sum_{1\leq i_1<...<i_k<n+1}P(A_{i_1}\cap ...\cap A_{i_k}\cap A_{n+1})\Big) \\
+		&+P(A_{n+1}) \\
+		=&\sum_{k=1}^{n}(-1)^{k-1}\sum_{1\leq i_1<...<i_k\leq n+1}P(A_{i_1}\cap ...\cap A_{i_k})\\
+		=&\sum_{k=1}^{n}(-1)^{k-1}S_{k,n+1}
+	\end{align*}
+	
+	As required.
+	
+	\paragraph{Exercise 9.}
+	\subparagraph{a.)}
+	$\frac{5!2!2!}{11!}=\frac{1}{83160}$
+	
+	\subparagraph{b.)}
+	$\frac{5}{11}*\frac{4}{10}=\frac{2}{11}$
+	
+	\subparagraph{c.)}
+	$\frac{8}{9}*\frac{6}{8}*\frac{4}{7}=\frac{8}{21}$
+	
+\end{document}

@@ -1,6 +1,6 @@
-# stat240
+# STAT240
 
-Max's STAT 240 notes
+Max's STAT 240 notes.
 
 UPDATE HISTORY
 

@@ -4,6 +4,8 @@ Max's STAT 240 notes.
 
 UPDATE HISTORY
 
+2018-09-26: Updated notes. Added watermark.
+
 2018-09-26: Updated notes.
 
 2018-09-25: Updated notes.

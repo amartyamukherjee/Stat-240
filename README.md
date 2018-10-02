@@ -4,6 +4,8 @@ Max's STAT 240 notes.
 
 UPDATE HISTORY
 
+2018-10-01: Updated notes. I skipped class today, not completely certain that my interpretation of the notes is accurate.
+
 2018-09-30: Updated notes. Added watermark.
 
 2018-09-26: Updated notes.

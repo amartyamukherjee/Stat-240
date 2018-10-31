@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\inv}{^{-1}}
+\allowdisplaybreaks
+\pagenumbering{gobble}
+
+\begin{document}
+		\begin{enumerate}[label=\textbf{Question \arabic*.}]
+			\setcounter{enumi}{11}
+			\item ~
+			
+			\item
+			\begin{enumerate}[label=(\alph*)]
+				\item Consider $X\inv$. Let $A'=\in\mathcal{F}$. Then,
+				\begin{align*}
+					X\inv(A')&=\{\omega\in\Omega : X(\omega)\in A'\}\\
+					&=
+				\end{align*}
+			\end{enumerate}
+			
+			\item ~
+			
+			\item ~
+			
+			\item
+			\begin{enumerate}[label=(\alph*)]
+				\item $\frac{1}{4}+\frac{1}{5}+\frac{1}{5}+\frac{1}{4}+2p_2+p_2=1\Rightarrow p_2=\frac{1}{30}, p_1=\frac{1}{15}$
+				
+				\item Let $X_1, X_2$ be the first and second number rolled, respectively.
+				\begin{align*}
+					P(\max\{X_1, X_2\}\leq x)&=P(X_1\leq x)P(X_2\leq x)\\
+					&=P(X_1\leq x)^2
+				\end{align*}
+				by symmetry. Let $F$ be the distribution function. Then,
+				\begin{align*}
+					F(x)=\begin{cases}
+						P(X_1\leq1)^2=\frac{1}{16},&x\in[1, 2)\\
+						P(X_1\leq2)^2=(\frac{1}{4}+\frac{1}{5})^2=\frac{81}{400},&x\in[2, 3)\\
+						P(X_1\leq3)^2=(\frac{1}{4}+\frac{2}{5})^2=\frac{169}{400},&x\in[3, 4)\\
+						P(X_1\leq4)^2=(\frac{2}{4}+\frac{2}{5})^2=\frac{81}{100},&x\in[4, 5)\\
+						P(X_1\leq5)^2=(\frac{2}{4}+\frac{2}{5}+p_1)^2,&x\in[5, 6)\\
+						P(X_1\leq6)^2=(\frac{2}{4}+\frac{2}{5}+p_1+p_2)^2,&x\in[6, \infty)\\
+					\end{cases}
+				\end{align*}
+				
+				Let $f$ be the probability mass function. Then,
+				\begin{align*}
+					f(x)&=\begin{cases}
+						P(X_1=1, X_2=1)=P(X_1=x)^2=\frac{1}{16},&x=1\\
+						P(X_1=2, X_2\leq 2\cup X_1\leq2, X_2=2),&x=2\\
+						P(X_1=3, X_2\leq 3\cup X_1\leq3, X_2=3),&x=3\\
+						P(X_1=4, X_2\leq 4\cup X_1\leq4, X_2=4),&x=4\\
+						P(X_1=5, X_2\leq 5\cup X_1\leq5, X_2=5),&x=5\\
+						P(X_1=6, X_2\leq 6\cup X_1\leq6, X_2=6),&x=6\\
+					\end{cases}\\
+					&=\begin{cases}
+						\frac{1}{16},&x=1\\
+						2P(X_1=2)P(X_2\leq 2)-P(X_1=X_2=2)=0.14,&x=2\\
+						2P(X_1=3)P(X_2\leq 3)-P(X_1=X_2=3)=0.22,&x=3\\
+						2P(X_1=4)P(X_2\leq 4)-P(X_1=X_2=4)=0.3875,&x=4\\
+						2P(X_1=5)P(X_2\leq 5)-P(X_1=X_2=5)=2p_1(0.9+p_1)-p_1^2,&x=5\\
+						2P(X_1=6)P(X_2\leq 6)-P(X_1=X_2=6)=2p_2-p_2^2,&x=6\\
+					\end{cases}
+				\end{align*}
+			\end{enumerate}
+			
+			\item
+			\begin{enumerate}[label=(\alph*)]
+				\item
+				Suppose $x\geq 4$. Note that $\min\{X, 4\}\leq4$. Therefore, since $x\geq4$, $\min\{X, 4\}\leq4\leq x$.\\
+				
+				Suppose $x<4$. Note that $\min\{X, 4\}\leq X$. Therefore, $X\leq x\Rightarrow\min\{X, 4\}\leq x$.\\
+				Also, $\min\{X, 4\}\leq x\Rightarrow (X\leq x \mbox{ or } 4\leq x)$. But by assumption, $x<4$, so $\min\{X, 4\}\leq x\Rightarrow X\leq x$. Thus, $X\leq x$ and $\min\{X, 4\}\leq x$ are equivalent statements when $x<4$.\\
+				\begin{align*}
+					F_Y(x)&=P(Y\leq x)\\
+					&=P(\min\{X, 4\}\leq x)\\
+					&=\begin{cases}
+						P(X\leq x),\;x<4\\
+						1,\;x\geq4
+					\end{cases}\\
+					&=\begin{cases}
+						F(x),\;x<4\\
+						1,\;x\geq4
+					\end{cases}\\
+					&=\begin{cases}
+						F(x),\;x<4\\
+						1,\;x\geq4
+					\end{cases}\\
+				\end{align*}
+			\end{enumerate}
+			
+			
+			\item ~
+				
+			\item Suppose $X=Y$. Then,
+			\begin{align*}
+				F_X(x)&=P(X\leq x)\\
+				&=P(Y\leq x)\\
+				&=F_Y(x)
+			\end{align*}
+			for all $x\in\R$.
+		\end{enumerate}
+\end{document}

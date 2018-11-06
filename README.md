@@ -4,6 +4,8 @@ Max's STAT 240 notes.
 
 UPDATE HISTORY
 
+2018-11-05: Made a few corrections
+
 2018-11-04: Updated notes.
 
 2018-10-01: Updated notes. I skipped class today, not completely certain that my interpretation of the notes is accurate.

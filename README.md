@@ -4,6 +4,8 @@ Max's STAT 240 notes.
 
 UPDATE HISTORY
 
+2018-11-17: Updated notes.
+
 2018-11-14: Updated notes.
 
 2018-11-05: Made a few corrections

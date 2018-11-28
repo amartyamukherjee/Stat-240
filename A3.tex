@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\inv}{^{-1}}
+\allowdisplaybreaks
+\pagenumbering{gobble}
+
+\begin{document}
+		\begin{enumerate}[label=\textbf{Question \arabic*.}]
+			\setcounter{enumi}{22}
+			
+			\item
+			\begin{enumerate}[label=(\alph*)]
+				\item $E(X)=0P(0)+1P(1)+2P(2)=\frac{1}{5}+\frac{1}{10}+\frac{1}{30}+2(\frac{3}{15})=\frac{11}{15}$
+				
+				\item $Z$ can take on these values: $-2, -1, 0, 1, 2$. Thus,
+				$$E(Z)=-2P(Z=-2)-1P(Z=-1)+0P(Z=0)+1P(Z=1)+2P(Z=2)=-2(\frac{1}{15})-(\frac{1}{5})+\frac{1}{30}+2\frac{1}{15}=\frac{-1}{6}$$
+				
+				$Z^2$ can take on these values: $0, 1, 4$. Thus,				
+				
+				$$E(Z^2)=0P(Z^2=0)+1P(Z^2=1)+4P(Z^2=4)=(\frac{1}{5}+\frac{1}{30})+4(\frac{1}{15}+\frac{1}{15})=\frac{23}{30}$$
+				
+				Therefore,
+				
+				$$\Var(Z)=E(Z^2)-E(Z)^2=\frac{23}{30}-(\frac{-1}{6})^2=\frac{133}{180}$$
+				
+				\item Let $a=P(X=0, Y=0), b=P(X=0, Y=1)$.
+				\begin{align*}
+					\Cov(X, Y)&=E(XY)-E(X)E(Y)\\
+					&=\frac{-1}{6}-\frac{11}{15}E(Y)\\
+					&=\frac{-2}{45}\\
+					\Rightarrow E(Y)&=-1P(Y=-1)+0P(Y=0)+1P(Y=1)\\
+					&=-(\frac{2}{5}+\frac{1}{15})+b\\
+					&=-\frac{-1}{6}\\
+					\Rightarrow b&=\frac{19}{30}\\
+					\Rightarrow a&=\frac{4}{15}
+				\end{align*}
+				Since all the probabilities must add up to 1.
+			\end{enumerate}
+			
+			\item ~
+			
+			\item 
+			\begin{enumerate}[label=(\alph*)]
+				\item A student takes at least 10 trials to be correct for the first time iff they failed 9 times in a row from the beginning. Thus, we calculate the probability $P(\mbox{``failure"})^{9}=0.4^{9}=\frac{512}{1953125}=0.000262144$.
+				
+				\item Since the trials are independent, the first three trials have no impact on any subsequent trials. Therefore the student takes at least 13 trials to be correct given they fail the first three trials iff trials number 4-12 are all failures. Thus, we calculate the probability $P(\mbox{``failure"})^{9}=0.4^{9}=\frac{512}{1953125}=0.000262144$, same as part (a).
+			\end{enumerate}
+			
+			\item ~
+			
+			\item ~
+			
+			\item ~
+			
+			\item ~
+			
+			\newpage			
+			
+			\item First, let $X_j=\sum_{k=1}^{n_j}{X_{j_k}}$ for Bernoulli trials $X_{j_1}, \dots, X_{j_{n_j}}\sim B(1, p)$. So, the characteristic function of $X_j\sim B(n_j, p)$ is
+			\begin{align*}
+				\phi_{X_j}(t)&=E(e^{it\sum_{k=1}^{n_j}X_{j_k}})\\
+				&=E(\prod_{k=1}^{n_j}e^{itX_{j_k}})\\
+				&=\prod_{k=1}^{n_j}E(e^{itX_{j_k}})\\
+				&=(E(e^{itX_{j_1}}))^{n_j}\\
+				&=(P(X_{j_1}=1)e^{1it}+P(X_{j_1}=0)e^{0it})^{n_j}\\
+				&=(pe^{it}+1-p)^{n_j}
+			\end{align*}
+			
+			Let $Y\sim B(\sum_{j=1}^dn_j, p)$. Then,
+			
+			\begin{align*}
+				\phi_{\sum_{j=1}^dX_j}(t)&=\prod_{j=1}^d\phi_{X_j}(t)\\
+				&=\prod_{j=1}^d(pe^{it}+1-p)^{n_j})^{n_j}\\
+				&=(pe^{it}+1-p)^{\sum_{j=1}^{d}n_j}\\
+				&=\phi_Y(t)
+			\end{align*}
+			
+			So by uniqueness, $\sum_{j=1}^dX_j\sim B(\sum_{j=1}^dn_j, p)$.
+			
+			\item ~
+		\end{enumerate}
+\end{document}
